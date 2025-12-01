@@ -1,103 +1,242 @@
+:root {
+    /* --- RENK PALETİ --- */
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --bg-card: #fdfdfd;
+    
+    /* GÜNCEL: Örnek Kutusu daha belirgin gri */
+    --bg-example: #f1f3f5; 
+    
+    /* Rozetler */
+    --badge-pos-bg: #546e7a; /* Blue Grey - Daha tok bir renk */
+    --badge-text: #ffffff;
+    
+    /* GÜNCEL: Anlam Rengi (Kiremit / Terracotta) */
+    --color-meaning: #d35400; 
+    
+    /* Tanım */
+    --color-def-border: #3498db;
+    --color-def-text: #34495e;
+    
+    /* GÜNCEL: Eş Anlamlılar (Daha yumuşak) */
+    --syn-bg: #fff8e1;
+    --syn-text: #8d6e63;
+    --syn-border: #ffe082;
+
+    /* Süslemeler */
+    --bullet-color: #bdc3c7;
+    --border-dashed: #dcdcdc;
+}
+
+/* DARK MODE AYARLARI */
+.nightMode {
+    --text-primary: #eceff1;
+    --text-secondary: #b0bec5;
+    --bg-card: #202124;
+    --bg-example: #303134; /* Dark mode için özel gri */
+    --badge-pos-bg: #37474f;
+    --color-meaning: #ffab91; /* Gece için pastel somon */
+    --color-def-text: #cfd8dc;
+    --syn-bg: #3e2723;
+    --syn-text: #ffca28;
+    --syn-border: #4e342e;
+    --bullet-color: #546e7a;
+    --border-dashed: #424242;
+}
+
 .card {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 20px;
+    background-color: var(--bg-card);
+    color: var(--text-primary);
+    line-height: 1.5;
+    height: 100%;
+}
+
+/* --- ÖN YÜZ DÜZENİ --- */
+.front-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
     text-align: center;
-    color: #333;
-    background-color: #fdfdfd;
 }
 
-.card-container { padding: 10px 20px; }
-
-/* SES BUTONU KUTUSU */
-.audio-container {
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-
-/* ROZETLER KUTUSU */
+/* --- ROZET ALANLARI --- */
 .badge-container {
-    margin-bottom: 5px;
     display: flex;
     justify-content: center;
-    gap: 8px; /* İki rozet arasındaki boşluk */
-    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
 }
 
-/* SEVİYE ROZETİ */
+/* Ortak Ayarlar */
+.level-badge, .pos-badge {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.75rem; /* ~12px */
+    font-weight: 700;
+    color: var(--badge-text);
+    letter-spacing: 0.5px;
+}
+
+/* GÜNCEL: Level -> UPPERCASE (A1, B2) */
 .level-badge {
-    padding: 3px 10px; border-radius: 6px;
-    font-size: 13px; font-weight: 700; color: white;
-    text-transform: uppercase; letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
-/* YENİ POS (TÜR) ROZETİ */
+/* GÜNCEL: Part of Speech -> lowercase (noun, verb) */
 .pos-badge {
-    padding: 3px 10px; 
-    border-radius: 6px;
-    font-size: 13px; 
-    font-weight: 700; 
-    color: white; /* BEYAZ YAZI - OKUNABİLİRLİK İÇİN */
-    background-color: #607d8b; /* Blue Grey - Profesyonel Gri */
-    font-style: italic;
+    text-transform: lowercase;
+    background-color: var(--badge-pos-bg);
     font-family: Georgia, serif;
+    font-style: italic;
 }
 
-/* KELİME & IPA */
-.word { font-size: 44px; font-weight: 800; margin-top: 5px; color: #2c3e50; letter-spacing: -0.5px; }
-.ipa { font-family: 'Lucida Sans Unicode', sans-serif; font-size: 18px; color: #95a5a6; margin-bottom: 5px; }
-
-
-/* DEF ETİKETİ VE TANIM */
-.eng-def-container {
-    text-align: left; margin: 15px auto 5px auto; padding: 0 10px;
-    max-width: 500px; line-height: 1.4;
+/* --- KELİME & IPA --- */
+.word {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 5px 0;
+    line-height: 1.1;
 }
+
+.ipa-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 5px;
+}
+
+.ipa {
+    font-family: 'Lucida Sans Unicode', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+/* Anki Ses Butonu Reset */
+.replay-button svg {
+    width: 20px !important;
+    height: 20px !important;
+    fill: var(--text-secondary) !important;
+}
+.replay-button {
+    width: 20px;
+    height: 20px;
+}
+
+/* --- ARKA YÜZ DÜZENİ --- */
+.back-wrapper {
+    text-align: left;
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.back-header {
+    text-align: center;
+    opacity: 0.7;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed var(--border-dashed);
+}
+
+hr#answer { display: none; } /* Standart çizgiyi gizledik, header çizgisini kullanıyoruz */
+
+/* Definition & Meaning */
+.eng-def-container { margin: 15px 0 10px 0; }
 
 .def-label {
-    font-size: 10px; font-weight: 900; color: #3498db;
-    border: 1px solid #3498db; padding: 1px 4px; border-radius: 3px;
-    vertical-align: middle; margin-right: 8px; opacity: 0.8;
+    font-size: 0.65rem;
+    font-weight: 900;
+    color: var(--color-def-border);
+    border: 1px solid var(--color-def-border);
+    padding: 2px 5px;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-right: 6px;
 }
 
 .eng-def {
-    font-size: 18px; color: #34495e; font-style: italic;
+    font-size: 1.1rem;
+    font-style: italic;
     font-family: Georgia, serif;
+    color: var(--color-def-text);
 }
 
-/* TÜRKÇE ANLAM */
 .tr-meaning {
-    font-size: 20px; font-weight: 600; color: #e74c3c;
-    margin-bottom: 10px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--color-meaning); /* Yeni Terracotta Rengi */
+    margin-bottom: 20px;
 }
 
-/* EŞ ANLAMLILAR */
 .synonyms-container {
-    display: inline-block;
-    background-color: #fff3cd; color: #856404;
-    padding: 4px 12px; border-radius: 15px;
-    font-size: 15px; margin-bottom: 20px;
-    border: 1px solid #ffeeba;
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--syn-bg);
+    color: var(--syn-text);
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    border: 1px solid var(--syn-border);
 }
-.syn-label { font-weight: bold; margin-right: 5px; }
+.syn-label { font-weight: bold; margin-right: 6px; font-size: 1.1em;}
 .syn-text { font-style: italic; }
 
-/* ÖRNEKLER */
+/* --- ÖRNEKLER KUTUSU (GÜNCEL & FİXLENMİŞ) --- */
 .examples-box {
-    background-color: #f8f9fa; padding: 15px; border-radius: 10px;
-    border-left: 4px solid #34495e; text-align: left;
-    margin: 0 auto; max-width: 500px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: relative; /* Sabitleme referans noktası */
+    background-color: var(--bg-example);
+    padding: 35px 20px 20px 20px; /* Üstten 35px boşluk (buton için) */
+    border-radius: 12px;
+    border-left: 5px solid var(--text-secondary);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+    margin-top: 10px;
 }
-.sentence-row { display: flex; align-items: flex-start; }
-.bullet { color: #bdc3c7; margin-right: 8px; font-size: 20px; line-height: 1.2; }
-.sentence { font-size: 17px; line-height: 1.5; color: #555; }
 
-/* DARK MODE UYUMLARI */
-.nightMode .card { background-color: #222; color: #ddd; }
-.nightMode .word { color: #ecf0f1; }
-.nightMode .pos-badge { background-color: #455a64; color: #eceff1; }
-.nightMode .eng-def { color: #bdc3c7; }
-.nightMode .tr-meaning { color: #ff6b6b; }
-.nightMode .synonyms-container { background-color: #3e3c30; color: #f1c40f; border-color: #555; }
-.nightMode .examples-box { background-color: #2c3e50; border-left-color: #95a5a6; }
-.nightMode .sentence { color: #ecf0f1; }
+/* Ses Butonunu Sağ Üste Çivileme */
+.examples-box .audio-container {
+    position: absolute; /* Akıştan bağımsız */
+    top: 10px;
+    right: 10px;
+    margin: 0;
+    z-index: 10;
+}
+
+/* Butonun aşırı büyümesini önle */
+.examples-box .replay-button, 
+.examples-box .replay-button svg {
+    width: 24px !important;
+    height: 24px !important;
+    max-width: 24px !important;
+}
+
+.sentence-row {
+    display: flex;
+    align-items: flex-start; /* Bullet yukarıda kalsın */
+}
+
+.bullet {
+    color: var(--bullet-color);
+    margin-right: 10px;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    flex-shrink: 0;
+}
+
+.sentence {
+    font-size: 1.05rem; /* ~17px */
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+.sentence-divider {
+    height: 1px;
+    background-color: var(--border-dashed);
+    margin: 12px 0;
+}

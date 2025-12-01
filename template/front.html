@@ -1,45 +1,41 @@
-<div class="card-container">
+<div class="front-wrapper">
     
     <div class="badge-container">
         <span class="level-badge" id="level">{{Level}}</span>
-        
         {{#Part of Speech}}
         <span class="pos-badge">{{Part of Speech}}</span>
         {{/Part of Speech}}
     </div>
 
     <div class="word">{{Word}}</div>
-    <div class="ipa">{{IPA}}</div>
     
-    <div class="audio-container">{{wordAudio}}</div>
+    <div class="ipa-row">
+        <span class="ipa">{{IPA}}</span>
+        <div class="audio-container">{{wordAudio}}</div>
+    </div>
 
 </div>
 
 <script>
 var levelDiv = document.getElementById('level');
 if (levelDiv) {
-    var text = levelDiv.innerText.trim().toUpperCase();
-
+    var text = levelDiv.innerText.trim().toUpperCase(); // Büyük harfe çevirip kontrol et
     if (text.includes('A1') || text.includes('A2')) {
-        levelDiv.style.backgroundColor = '#27ae60'; /* Yeşil */
+        levelDiv.style.backgroundColor = '#27ae60';
     } else if (text.includes('B1') || text.includes('B2')) {
-        levelDiv.style.backgroundColor = '#e67e22'; /* Turuncu */
+        levelDiv.style.backgroundColor = '#e67e22';
     } else if (text.includes('C1') || text.includes('C2')) {
-        levelDiv.style.backgroundColor = '#8e44ad'; /* Mor */
+        levelDiv.style.backgroundColor = '#8e44ad';
     }
 }
 </script>
 
 <script>
     setTimeout(function() {
-        // Ön yüzde 'audio-container' içindeki oynat butonunu bulur
         var audioDiv = document.querySelector('.audio-container');
         if (audioDiv) {
-            // Anki sürümüne göre buton 'a' etiketi veya 'replay-button' class'ı olabilir, ikisini de dener.
             var btn = audioDiv.querySelector('.replay-button, a');
-            if (btn) {
-                btn.click();
-            }
+            if (btn) btn.click();
         }
-    }, 500); // 500 milisaniye = 0.5 saniye (Süreyi buradan değiştirebilirsin)
+    }, 300); 
 </script>

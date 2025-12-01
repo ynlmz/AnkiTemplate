@@ -1,77 +1,81 @@
-<div class="card-container" style="padding-bottom: 0;">
+<div class="back-header">
     <div class="badge-container">
         <span class="level-badge" id="level-back">{{Level}}</span>
         {{#Part of Speech}}
         <span class="pos-badge">{{Part of Speech}}</span>
         {{/Part of Speech}}
     </div>
-    <div class="word">{{Word}}</div>
+    <div class="word" style="font-size: 1.6rem;">{{Word}}</div>
     <div class="ipa">{{IPA}}</div>
 </div>
 
-<hr id=answer>
+<hr id="answer">
 
-<div class="eng-def-container">
-    <span class="def-label">DEF</span>
-    <span class="eng-def">{{Definition}}</span>
-</div>
+<div class="back-wrapper">
 
-<div class="tr-meaning">{{Meaning}}</div>
-
-{{#Synonyms}}
-<div class="synonyms-container">
-    <span class="syn-label">≠</span> <span class="syn-text">{{Synonyms}}</span>
-</div>
-{{/Synonyms}}
-
-<br>
-
-<div class="examples-box">
-    
-    <div class="audio-container" style="margin-bottom: 10px; text-align: center;">
-        {{exampleAudio}}
+    <div class="eng-def-container">
+        <span class="def-label">DEF</span>
+        <span class="eng-def">{{Definition}}</span>
     </div>
 
-    <div class="sentence-row">
-        <span class="bullet">•</span>
-        <span class="sentence">{{Example}}</span>
+    <div class="tr-meaning">{{Meaning}}</div>
+
+    {{#Synonyms}}
+    <div class="synonyms-container">
+        <span class="syn-label">≈</span>
+        <span class="syn-text">{{Synonyms}}</span>
+    </div>
+    {{/Synonyms}}
+
+    <br>
+
+    <div class="examples-box">
+        
+        <div class="audio-container">
+            {{exampleAudio}}
+        </div>
+
+        <div class="sentence-row">
+            <span class="bullet">•</span>
+            <span class="sentence">{{Example}}</span>
+        </div>
+
+        {{#Example 2}}
+        <div class="sentence-divider"></div> 
+        <div class="sentence-row">
+            <span class="bullet">•</span>
+            <span class="sentence">{{Example 2}}</span>
+        </div>
+        {{/Example 2}}
     </div>
 
-    {{#Example 2}}
-    <div class="sentence-row" style="margin-top:10px; border-top:1px dashed #ccc; padding-top:10px;">
-        <span class="bullet">•</span>
-        <span class="sentence">{{Example 2}}</span>
-    </div>
-    {{/Example 2}}
 </div>
 
 <script>
 var levelDivBack = document.getElementById('level-back');
 if (levelDivBack) {
     var textBack = levelDivBack.innerText.trim().toUpperCase();
-
     if (textBack.includes('A1') || textBack.includes('A2')) {
         levelDivBack.style.backgroundColor = '#27ae60';
     } else if (textBack.includes('B1') || textBack.includes('B2')) {
         levelDivBack.style.backgroundColor = '#e67e22';
     } else if (textBack.includes('C1') || textBack.includes('C2')) {
         levelDivBack.style.backgroundColor = '#8e44ad';
+    } else {
+        levelDivBack.style.backgroundColor = '#95a5a6'; // Tanımsız ise gri
     }
 }
 </script>
 
 <script>
     setTimeout(function() {
-        // Arka yüzde 'examples-box' içindeki 'audio-container'ı hedefler
         var exampleBox = document.querySelector('.examples-box');
         if (exampleBox) {
             var audioDiv = exampleBox.querySelector('.audio-container');
             if (audioDiv) {
                 var btn = audioDiv.querySelector('.replay-button, a');
-                if (btn) {
-                    btn.click();
-                }
+                if (btn) btn.click();
             }
         }
-    }, 500); // 500 milisaniye gecikme
+    }, 500);
 </script>
