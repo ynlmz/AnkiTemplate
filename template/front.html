@@ -1,0 +1,45 @@
+<div class="card-container">
+    
+    <div class="badge-container">
+        <span class="level-badge" id="level">{{Level}}</span>
+        
+        {{#Part of Speech}}
+        <span class="pos-badge">{{Part of Speech}}</span>
+        {{/Part of Speech}}
+    </div>
+
+    <div class="word">{{Word}}</div>
+    <div class="ipa">{{IPA}}</div>
+    
+    <div class="audio-container">{{wordAudio}}</div>
+
+</div>
+
+<script>
+var levelDiv = document.getElementById('level');
+if (levelDiv) {
+    var text = levelDiv.innerText.trim().toUpperCase();
+
+    if (text.includes('A1') || text.includes('A2')) {
+        levelDiv.style.backgroundColor = '#27ae60'; /* Yeşil */
+    } else if (text.includes('B1') || text.includes('B2')) {
+        levelDiv.style.backgroundColor = '#e67e22'; /* Turuncu */
+    } else if (text.includes('C1') || text.includes('C2')) {
+        levelDiv.style.backgroundColor = '#8e44ad'; /* Mor */
+    }
+}
+</script>
+
+<script>
+    setTimeout(function() {
+        // Ön yüzde 'audio-container' içindeki oynat butonunu bulur
+        var audioDiv = document.querySelector('.audio-container');
+        if (audioDiv) {
+            // Anki sürümüne göre buton 'a' etiketi veya 'replay-button' class'ı olabilir, ikisini de dener.
+            var btn = audioDiv.querySelector('.replay-button, a');
+            if (btn) {
+                btn.click();
+            }
+        }
+    }, 500); // 500 milisaniye = 0.5 saniye (Süreyi buradan değiştirebilirsin)
+</script>
