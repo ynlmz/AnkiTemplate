@@ -19,6 +19,13 @@ Screenshots live in `template/pics`: `light_front.png` (light mode front), `ligh
 - `template/style.css` – shared styling with light/dark support and refined typography.
 - `vocabulary.csv` – sample deck data ready for import.
 
+## Vocabulary CSV Format
+- Encoding and quoting: UTF-8, double-quoted fields, no header row.
+- Column order (9 total): Word, IPA, Level (A1–C2), Part of Speech, Definition, Meaning/Translation, Synonyms, Example, Example 2.
+- Optional fields (`Synonyms`, `Example 2`) can be left empty with `""`.
+- Example sentences may include simple HTML like `<b>word</b>` to highlight the target term; keep other markup minimal.
+- Sample row: `"revert","rɪˈvɜːt","C1","verb","to return to a previous state or subject","eski haline dönmek","return, regress","We should not <b>revert</b> to the old inefficient system.","Try not to <b>revert</b> to your bad habits when you get stressed."`
+
 ## Set Up in Anki (Desktop)
 1) In Anki, go to `Tools -> Manage Note Types -> Add` and clone an existing basic note type (or create new).  
 2) Open the new note type’s `Cards...` editor:  
