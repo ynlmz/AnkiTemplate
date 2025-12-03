@@ -3,7 +3,6 @@
 A clean Anki card layout with automatic audio playback, colored level badges, and a ready-to-import vocabulary CSV. Use the snippets in `template/` to style your own note type and the CSV to jump-start your deck.
 
 ## Preview
-Screenshots live in `template/pics`: `light_front.png` (light mode front), `light_back.png` (light mode back), `dark_front.png` (dark mode front), and `dark_back.png` (dark mode back).
 
 | Light Mode — Card Front | Light Mode — Card Back |
 | --- | --- |
@@ -13,21 +12,13 @@ Screenshots live in `template/pics`: `light_front.png` (light mode front), `ligh
 | --- | --- |
 | ![Dark mode front](template/pics/dark_front.png) | ![Dark mode back](template/pics/dark_back.png) |
 
-## Files
-- `template/front.html` – front template with level and part-of-speech badges plus word audio autostart.
-- `template/back.html` – back template with definition, meaning, synonyms, examples, and example audio autostart.
-- `template/style.css` – shared styling with light/dark support and refined typography.
-- `vocabulary.csv` – sample deck data ready for import.
-
 ## Vocabulary CSV Format
-- Encoding and quoting: UTF-8, double-quoted fields, no header row.
 - Column order (9 total): Word, IPA, Level (A1–C2), Part of Speech, Definition, Meaning/Translation, Synonyms, Example, Example 2.
-- Optional fields (`Synonyms`, `Example 2`) can be left empty with `""`.
 - Example sentences may include simple HTML like `<b>word</b>` to highlight the target term; keep other markup minimal.
 - Sample row: `"revert","rɪˈvɜːt","C1","verb","to return to a previous state or subject","eski haline dönmek","return, regress","We should not <b>revert</b> to the old inefficient system.","Try not to <b>revert</b> to your bad habits when you get stressed."`
 
 ## Generate CSV with an LLM
-Use the exact prompt below (copied verbatim from `a.md`) to produce a CSV that matches this template:
+Use the prompt below to produce a CSV that matches this template:
 
 ````text
 Sen uzman bir Dilbilimci (Linguist) ve Sözlük Bilimci (Lexicographer) olarak görev yapacaksın. Temel amacın, kullanıcının sağladığı kelime listelerini, dosyaları (görsel, PDF, metin belgesi) veya metinleri analiz ederek, Anki flashcard uygulamasına uygun, yüksek kaliteli veri setleri oluşturmaktır.
