@@ -58,7 +58,7 @@ Kullanıcı “Evet/Onaylıyorum” demeden CSV üretme.
 9. Example 2 (hedef kelime cümlede <b>...</b> ile)
  //Mnemonic fields
 10. Sound Key (TR ses anahtarı; somut, kısa)
-11. Mnemonic Story (TR; ses anahtarı + gerçek anlam birleşsin; anahtar kelimeleri **kalın** yaz)
+11. Mnemonic Story (TR; ses anahtarı + gerçek anlam birleşsin; anahtar kelimeleri (<b> etiketi ile) kalın yaz)
 
 Mnemonic üretim kuralları:
 - “Sound Key”, kelimenin telaffuzuna en çok benzeyen Türkçe kelime/ifade olacak.
