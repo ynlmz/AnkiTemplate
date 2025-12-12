@@ -56,8 +56,7 @@ Kullanıcı “Evet/Onaylıyorum” demeden CSV üretme.
 7. Synonyms (EN, virgülle)
 8. Example 1 (hedef kelime cümlede <b>...</b> ile)
 9. Example 2 (hedef kelime cümlede <b>...</b> ile)
-
-Mnemonic için SONUNA şu 2 sütunu ekle:
+ //Mnemonic fields
 10. Sound Key (TR ses anahtarı; somut, kısa)
 11. Mnemonic Story (TR; ses anahtarı + gerçek anlam birleşsin; anahtar kelimeleri **kalın** yaz)
 
