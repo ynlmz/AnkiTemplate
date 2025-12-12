@@ -23,6 +23,13 @@
     --syn-text: #8d6e63;
     --syn-border: #ffe082;
 
+    /* Mnemonic Kutusu */
+    --mnemonic-bg: #fdf6ec;
+    --mnemonic-border: #f2c094;
+    --mnemonic-accent: #c96c2f;
+    --mnemonic-pill-bg: #fffaf2;
+    --mnemonic-pill-text: #8d5522;
+
     /* Süslemeler */
     --bullet-color: #bdc3c7;
     --border-dashed: #dcdcdc;
@@ -40,6 +47,11 @@
     --syn-bg: #3e2723;
     --syn-text: #ffca28;
     --syn-border: #4e342e;
+    --mnemonic-bg: #2a2622;
+    --mnemonic-border: #6a4b2f;
+    --mnemonic-accent: #f2c094;
+    --mnemonic-pill-bg: #332a23;
+    --mnemonic-pill-text: #f2d2a2;
     --bullet-color: #546e7a;
     --border-dashed: #424242;
 }
@@ -239,4 +251,88 @@ hr#answer { display: none; } /* Standart çizgiyi gizledik, header çizgisini ku
     height: 1px;
     background-color: var(--border-dashed);
     margin: 12px 0;
+}
+
+/* --- MNEMONIC KUTUSU --- */
+.mnemonic-shell { margin-top: 18px; }
+
+.mnemonic-box {
+    display: block;
+    background-color: var(--mnemonic-bg);
+    border: 1px solid var(--mnemonic-border);
+    border-left: 4px solid var(--mnemonic-accent);
+    border-radius: 12px;
+    padding: 12px 14px 14px 14px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+}
+
+.mnemonic-summary {
+    cursor: pointer;
+    font-weight: 800;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    color: var(--mnemonic-accent);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    user-select: none;
+}
+
+.mnemonic-summary::-webkit-details-marker { display: none; }
+
+.mnemonic-summary::after {
+    content: '';
+    border: solid var(--mnemonic-accent);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 4px;
+    margin-left: 8px;
+    transform: rotate(45deg);
+    transition: transform 0.18s ease;
+}
+
+.mnemonic-box[open] .mnemonic-summary::after { transform: rotate(225deg); }
+
+.mnemonic-summary:focus-visible {
+    outline: 2px solid var(--mnemonic-accent);
+    outline-offset: 3px;
+    border-radius: 8px;
+}
+
+.mnemonic-body {
+    margin-top: 12px;
+    display: grid;
+    gap: 10px;
+}
+
+.sound-key-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sound-key-label {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: var(--text-secondary);
+}
+
+.sound-key-pill {
+    background-color: var(--mnemonic-pill-bg);
+    color: var(--mnemonic-pill-text);
+    border: 1px solid var(--mnemonic-border);
+    border-radius: 12px;
+    padding: 4px 10px;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.mnemonic-story {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-primary);
 }
