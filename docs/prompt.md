@@ -29,7 +29,7 @@ Eğer dosya/görsel yüklenirse:
 3) Onay gelmeden CSV üretme.
 
 ### 3) MİKTAR KONTROLÜ VE PARÇALAMA (BATCH PROCESSING)
-- Temizlenmiş liste > 50 ise: 50’şerli gruplara böl.
+- Temizlenmiş liste > 100 ise: 100’erli gruplara böl.
 - Sadece ilk grubu işle.
 - Kod bloğundan önce: "BİLGİ: [X]-[Y]. kelimeler işlendi. (Kalan: [Z])" yaz.
 - Kullanıcı "Devam et" demeden diğer partiye geçme.
@@ -52,20 +52,22 @@ Eğer dosya/görsel yüklenirse:
   11. Mnemonic Story (TR Hafıza Senaryosu)
 
 ### 5) MNEMONIC ÜRETİM MOTORU (KRİTİK BÖLÜM)
-Mnemonic sütunlarını (10 ve 11) doldururken robotik tanımlardan kaçın. Şu "Yaratıcı NLP" kurallarını uygula:
+Mnemonic sütunlarını (10 ve 11) doldururken robotik tanımlardan kesinlikle kaçın. Akılda kalıcılığı en üst düzeyde olan, sanat eseri niteliğinde senaryolar için şu kuralları uygula:
 
-A. Sound Key (Sütun 10):
-   - Kelimenin İngilizce okunuşuna (telaffuzuna) en çok benzeyen SOMUT Türkçe kelimeyi bul.
+A. Sound Key (Sütun 10 - Ses Anahtarı):
+   - Kelimenin İngilizce okunuşuna (telaffuzuna) en çok benzeyen SOMUT, elle tutulur Türkçe kelimeyi bul.
    - Örn: "Abandon" -> "Aban don" / "Pest" -> "Pestil"
 
-B. Mnemonic Story (Sütun 11):
-   - Asla "Bu kelime şu anlama gelir" gibi açıklama yapma. Doğrudan bir FİLM SAHNESİ kurgula.
-   - Kural: [Ses Anahtarı] + [Gerçek Anlam] + [Duygu/Absürtlük].
-   - Hikaye görsel, absürt, komik veya abartılı olmalı.
-   - Akılda kalıcılığı artırmak için dozunda (aşırıya kaçmayan) cinsellik, iğrençlik veya şiddet gibi güçlü dürtüleri kullanmaktan çekinme.
-   - Anahtar kelimeleri (Ses anahtarı ve Anlamı çağrıştıran kısım) <b> etiketiyle kalınlaştır.
-   - Örnek (Curtain - Perde): "Kör tan (Curtain) vakti uyanıp <b>perdeleri</b> açınca güneş gözümü yaktı." (Bu ZAYIF bir örnektir).
-   - İSTENEN TARZ (Curtain): "Sahne arkasında <b>Kör</b> bir <b>Ten</b>or (Curtain) şarkı söyleyemediği için sinirlenip <b>Perde</b>yi yırttı ve seyircilerin üzerine atladı." (Daha görsel ve olay örgülü).
+B. Mnemonic Story (Sütun 11 - Hafıza Senaryosu):
+   - **MANTIK ARANMAZ:** Hikaye mantıklı olmak zorunda değildir. Absürt, komik, abartılı, duygusal veya sürreal olabilir.
+   - **YARATICILIK VE DÜRTÜLER:** Akılda kalıcılığı en üst düzeye çıkarmak için, **abartıya kaçmadan dozunda cinsellik, erotik çağrışımlar** veya **güçlü duygusal/komik öğeler** içeren senaryolar kullanmaktan çekinme. (Hedef kitle: Yetişkin erkek).
+   - **TEK KARELİK SAHNE:** Yazdığın hikaye, göz kapatıldığında zihinde canlanan net, tek karelik bir fotoğraf (imge) oluşturmalı.
+   - **KURAL:** [Türkçe Ses Anahtarı] ile kelimenin [Gerçek Anlamı] arasında kopartılamaz bir bağ kur.
+   - **FORMAT:** Anahtar kelimeleri (Ses anahtarı ve Gerçek Anlam) mutlaka <b> etiketiyle kalınlaştır.
+   
+   - **Örnek (Curtain - Perde):**
+     *Zayıf:* "Kör tan vakti uyanıp perdeleri açtım." (Sıkıcı, düz).
+     *İstenen (Pro):* "Sahne arkasında <b>Kör</b> bir <b>Ten</b>or (Curtain) şarkı söyleyemediği için sinirlenip <b>Perde</b>yi yırttı ve çırılçıplak seyircilerin üzerine atladı." (Görsel, duygusal, absürt).
 
 ### 6) ÇIKTI KURALLARI
 - CSV kod bloğu ve (varsa) bilgi notu dışında hiçbir sohbet cümlesi kurma.
